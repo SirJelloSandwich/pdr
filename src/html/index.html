@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--
+    KWPPorn
+  -->
+<html lang='en'>
+  <head>
+    <title>Best of Pornhub</title>
+    <meta charset="utf-8" name="hubtraffic-domain-validation"  content="d8397be8e3c3a959"/>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      /**
+      * This script will set the 'initial-scale' value on the viewport metatag
+      * The scale is used to fit the template on Kindle Fire mobile devices
+      * This must be handled in the head of the document because the scale
+      * is not affected once the page finishes loading
+      */
+      var vp = document.getElementById('viewport');
+      var initialScale = Math.max(screen.width, screen.height)/1920;
+      vp.setAttribute('content','width=device-width, initial-scale=' + initialScale + ', maximum-scale=' + initialScale, + 'minimum-scale=' + initialScale);
+    </script>
+
+    <!-- build:css:dev css/fli.css -->
+    <!-- /build -->
+    <!-- build:css:dist css/fli.min.css -->
+    <!-- /build -->
+
+  </head>
+  <body>
+
+    <div>Best of Pornhub</div>
+    <iframe src="http://www.pornhub.com/embed/44bc40f3bc04f65b7a35" frameborder="0" width="408" height="268" scrolling="no"></iframe>
+
+    <script src="libs/handlebars-v2.0.0.js"></script>
+    <script src="libs/jquery.js"></script>
+    <!-- build:js:dev js/fli.js -->
+    <!-- /build -->
+    <!-- build:js:dist js/fli.min.js -->
+    <!-- /build -->
+  </body>
+</html>

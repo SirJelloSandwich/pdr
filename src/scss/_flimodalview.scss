@@ -1,0 +1,15 @@
+
+.fliModalError{
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 198px;
+  z-index: 1000;
+  background-color: #ebebeb;
+  top: 450px;
+  left: 640px;
+  font-size: 72px;
+  line-height: 90px;
+  text-align: center;
+  border-radius: 20px;
+}
