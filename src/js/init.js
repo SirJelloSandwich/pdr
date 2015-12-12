@@ -4,43 +4,17 @@
   'use strict';
 
   var settings = {
-    appTitle: "FLICast",
+    appTitle: "Porn Done Right",
     Model: JSONMediaModel,
-    dataURL: 'http://www.ucg.org/api/v1.0/media?production=209',   
+    dataURL: 'http://www.pornhub.com/webmasters/search?id=10013401&search=compilation&thumbsize=large',
     numberOfCategories: 30,
-    developerToken: "sScWYPLSHmM76WQu_xBVQtvWMHXXbdEwbVcP38LBB9Q.",
-    accountID: "3986618082001",
-    playerID: "115d0726-53ff-4cd9-8a5d-c68ea10d3ea2",
+    developerToken: "10013401",
+    accountID: "",
+    playerID: "",
     showSearch: false,
     displayButtons: false,
-    tizen: false  
-  }; 
+    tizen: false
+  };
 
   exports.app = new App(settings);
 }(window));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

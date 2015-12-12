@@ -5,12 +5,12 @@ module.exports = function(grunt) {
   // our *in order* IIFE source files
   var iifeFiles =
         [
-          // './src/js/util.js',
-          // './src/js/error-handler.js',
+           './src/js/util.js',
+           './src/js/error-handler.js',
           // './src/js/dialog-view.js',
           // './src/js/button-view.js',
-          // './src/js/events.js',
-          // './src/js/buttons.js',
+           './src/js/events.js',
+           './src/js/buttons.js',
           // './src/js/controls-view.js',
           // './src/js/registration-view.js',
           // './src/js/search-view.js',
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           // './src/js/menubar-view.js',
           // './src/js/listscreen-view.js',
           // './src/js/gridrow-view.js',
-          // './src/js/featuredrow-view.js',
+             './src/js/featuredrow-view.js',
           // './src/js/gridwrap-view.js',
           // './src/js/autoplayShoveler-view.js',
           // './src/js/seriesSpringboardShoveler-view.js',
@@ -33,9 +33,9 @@ module.exports = function(grunt) {
           // './src/js/browseShoveler-view.js',
           // './src/js/shoveler-view.js',
           // './src/js/featured-model-json.js',
-          // './src/js/model-json.js',
-          // './src/js/app.js',
-          // './src/js/init.js'
+           './src/js/model-json.js',
+           './src/js/app.js',
+           './src/js/init.js'
         ];
 
   // Project Configuration

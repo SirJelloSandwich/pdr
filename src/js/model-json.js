@@ -10,18 +10,19 @@
 
     Events.call(this, ['error']);
 
-    this.beyondTodayDaily = [];
-    this.beyondTodayTV = [];
-    this.bibleStudy = [];
-    this.currData = {};
-    this.currentCategory = 0;
-    this.currentItem     = 0;
-    this.defaultTheme    = "default";
-    this.currentlySearchData = false;
-    this.featuredIds = [];
-    this.finalFeaturedData = [];
-    this.featuredUrl = 'http://www.ucg.org/api/v1.0/media/';
-    this.gaUrl = "http://www.google-analytics.com/collect?";
+    // this.beyondTodayDaily = [];
+    // this.beyondTodayTV = [];
+    // this.bibleStudy = [];
+    // this.currData = {};
+    // this.currentCategory = 0;
+    // this.currentItem     = 0;
+    // this.defaultTheme    = "default";
+    // this.currentlySearchData = false;
+    // this.featuredIds = [];
+    // this.finalFeaturedData = [];
+  //  this.featuredUrl = 'http://www.ucg.org/api/v1.0/media/';
+    //this.gaUrl = "http://www.google-analytics.com/collect?";
+    this.pdrData = [];
 
 
     //timeout default to 1 min
@@ -37,8 +38,8 @@
         cache : true,
         timeout: this.TIMEOUT,
         success : function() {
-          var contentData = arguments[0];
-          this.handleJsonData(contentData);
+          this.pdrData = arguments[0];
+        //  this.handleJsonData(contentData);
           dataLoadedCallback();
         }.bind(this),
         error : function(jqXHR, textStatus) {
@@ -69,7 +70,7 @@
       var postData = {
         url: this.gaUrl,
         type: 'POST',
-        crossDomain: true,      
+        crossDomain: true,
         context : this,
         cache : true,
         timeout: this.TIMEOUT,

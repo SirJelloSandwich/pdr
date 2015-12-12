@@ -5,8 +5,8 @@
   -->
 <html lang='en'>
   <head>
-    <title>Best of Pornhub</title>
-    <meta charset="utf-8" name="hubtraffic-domain-validation"  content="d8397be8e3c3a959"/>
+    <title>Porn Done Right</title>
+    <meta charset="utf-8" name="hubtraffic-domain-validation" content="d8397be8e3c3a959"/>
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       /**
@@ -27,9 +27,34 @@
 
   </head>
   <body>
+    <div id="app-container" class="app-main-container"></div>
 
-    <div>Best of Pornhub</div>
-    <iframe src="http://www.pornhub.com/embed/44bc40f3bc04f65b7a35" frameborder="0" width="408" height="268" scrolling="no"></iframe>
+    <!-- App Header Template -->
+  <script id="app-header-template" type="text/x-handlebars-template">
+    <div class="app-top-bar">
+      <div class="mainTitle">Porn Done Right</div>
+    </div>
+  </script>
+
+  <!-- Featured View Template  -->
+  <script id="featured-template" type="text/x-handlebars-template">
+    <div class="largeBrowseContainer">
+      <div class="innerLargeBrowseContainer">
+        <div id="featured-container">
+          {{#each items}}
+          <div id="{{@index}}" class="featured-static ">
+            <div class="featuredRowInfoOverlay"></div>
+          </div>
+          {{/each}}
+
+        </div>
+      </div>
+    </div>
+
+  </script>
+
+    <!-- <div>Best of Pornhub</div> -->
+    <!-- <iframe src="http://www.pornhub.com/embed/44bc40f3bc04f65b7a35" frameborder="0" width="408" height="268" scrolling="no"></iframe> -->
 
     <script src="libs/handlebars-v2.0.0.js"></script>
     <script src="libs/jquery.js"></script>

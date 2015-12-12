@@ -63,16 +63,16 @@
       this.$appContainer.append(html);
 
       this.browse();
-
-      this.gaUrl += "v=1"; // Version.
-      this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
-      this.gaUrl += "&cid=555"; // Anonymous Client ID.
-      this.gaUrl += "&t=event"; // Event hit type
-      this.gaUrl += "&ec=Channel%20Launch"; // Event Category. Required.
-      this.gaUrl += "&ea=App%20Launched"; // Event Action. Required.
-      this.gaUrl += "&el=Beyond%20Today%20FireTV"; // Event label.
-      this.gaUrl += "&z=" + Date.now();
-      app.data.postData(this.gaUrl);
+      //
+      // this.gaUrl += "v=1"; // Version.
+      // this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
+      // this.gaUrl += "&cid=555"; // Anonymous Client ID.
+      // this.gaUrl += "&t=event"; // Event hit type
+      // this.gaUrl += "&ec=Channel%20Launch"; // Event Category. Required.
+      // this.gaUrl += "&ea=App%20Launched"; // Event Action. Required.
+      // this.gaUrl += "&el=Beyond%20Today%20FireTV"; // Event label.
+      // this.gaUrl += "&z=" + Date.now();
+      // app.data.postData(this.gaUrl);
 
 
     }.bind(this);
@@ -160,10 +160,10 @@
 
     this.browse = function() {
 
-      this.initializeMenuBarView();
+      //this.initializeMenuBarView();
       this.initFeaturedRowView();
       this.selectView(this.featuredRowView);
-      $(".overlayFade").show();
+      //$(".overlayFade").show();
 
     };
 
@@ -748,23 +748,23 @@
 
       featuredRowView.on('select', function(index) {
 
-        this.springboard = 1;
-        this.featuredRowView.unhighLight();
-        $("#menu-bar").hide();
-        $(".largeBrowseContainer").hide();
-        this.initSpringboardPageView(this.featuredRowData[0].data[index]);
-
-        this.gaUrl += "v=1"; // Version.
-        this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
-        this.gaUrl += "&cid=555"; // Anonymous Client ID.
-        this.gaUrl += "&t=event"; // Event hit type
-        this.gaUrl += "&ec=Featured%20Row"; // Event Category. Required.
-        this.gaUrl += "&ea=select"; // Event Action. Required.
-        this.gaUrl += "&el=" + this.featuredRowData[0].data[index].label; // Event label.
-        this.gaUrl += "&z=" + Date.now();
-        app.data.postData(this.gaUrl);
-        this.selectView(this.springboardPageView);
-        this.lastView = "featuredRow";
+        // this.springboard = 1;
+        // this.featuredRowView.unhighLight();
+        // $("#menu-bar").hide();
+        // $(".largeBrowseContainer").hide();
+        // this.initSpringboardPageView(this.featuredRowData[0].data[index]);
+        //
+        // this.gaUrl += "v=1"; // Version.
+        // this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
+        // this.gaUrl += "&cid=555"; // Anonymous Client ID.
+        // this.gaUrl += "&t=event"; // Event hit type
+        // this.gaUrl += "&ec=Featured%20Row"; // Event Category. Required.
+        // this.gaUrl += "&ea=select"; // Event Action. Required.
+        // this.gaUrl += "&el=" + this.featuredRowData[0].data[index].label; // Event label.
+        // this.gaUrl += "&z=" + Date.now();
+        // app.data.postData(this.gaUrl);
+        // this.selectView(this.springboardPageView);
+        // this.lastView = "featuredRow";
 
       }, this);
 
@@ -819,24 +819,24 @@
 
       featuredRowView.on('loadComplete', function() {
 
-        this.initBrowseShovelerView($(".innerLargeBrowseContainer"));
+        //this.initBrowseShovelerView($(".innerLargeBrowseContainer"));
         //$(".innerLargeBrowseContainer").on('webkitTransitionEnd', function(e){ app.featuredRowView.highLight();  console.log("hererenderxxx");$(this).off(e); }  );
 
       }, this);
 
       var successCallback = function(featuredData) {
-        this.featuredRowData = featuredData;
-        featuredRowView.render(this.$appContainer, this.featuredRowData);
+      //  this.featuredRowData = featuredData;
+
       }.bind(this);
 
 
       featuredRowView.updateCategory = function() {
-        app.data.getFeaturedUrl(successCallback);
+        //app.data.getFeaturedUrl(successCallback);
 
       }.bind(this);
 
-      this.featuredRowView.updateCategory();
-
+    //  this.featuredRowView.updateCategory();
+      featuredRowView.render(this.$appContainer, app.data.pdrData);
     };
 
     /***************************

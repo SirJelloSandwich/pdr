@@ -24,7 +24,7 @@
     this.currY = 0;
     this.loadingImages = 0;
     this.MARGIN_WIDTH = 40;
-    this.DEFAULT_IMAGE = "assets/default-image.png";
+    //this.DEFAULT_IMAGE = "assets/default-image.png";
 
 
     //jquery global variables
@@ -110,7 +110,7 @@
       //Make sure we don't already have a full container
 
       this.remove();
-      this.rowData = rowData[0].data;
+      this.rowData = rowData.videos;
 
       // Build the main content template and add it
 
@@ -152,8 +152,8 @@
         var $currElt = $(this.$rowElements[i]);
         var $currImage = $currElt.children("img.featured-full-img");
         if ($currImage.length === 0) {
-          $currElt.prepend('<img class = "featured-full-img " src="' + this.rowData[i].image.styles.large + '" style="opacity:0"/>');
-          $currElt.append('<div class="featuredOverlayText"><div class="featuredRowInfoOverlayTitle">' + this.rowData[i].label + '</div>');
+          $currElt.prepend('<img class = "featured-full-img " src="' + this.rowData[i].thumb + '" style="opacity:0"/>');
+          $currElt.append('<div class="featuredOverlayText"><div class="featuredRowInfoOverlayTitle">' + this.rowData[i].title+ '</div>');
           $currImage = $currElt.children("img.featured-full-img");
         }
 

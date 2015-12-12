@@ -8,26 +8,26 @@
 (function(exports) {
   "use strict";
 
-  function onPause() {
-    if (app.playerView) {
-      app.playerView.pauseVideo();
-    }
-  }
+  // function onPause() {
+  //   if (app.playerView) {
+  //     app.playerView.pauseVideo();
+  //   }
+  // }
 
 
-  function onResume() {
-    if (app.playerView) {
-      app.playerView.resumeVideo();
-    }
-  }
+  // function onResume() {
+  //   if (app.playerView) {
+  //     app.playerView.resumeVideo();
+  //   }
+  // }
 
 
-  function onAmazonPlatformReady() {
-    document.addEventListener("pause", onPause, false);
-    document.addEventListener("resume", onResume, false);
-  }
+  // function onAmazonPlatformReady() {
+  //   document.addEventListener("pause", onPause, false);
+  //   document.addEventListener("resume", onResume, false);
+  // }
 
-  document.addEventListener("amazonPlatformReady", onAmazonPlatformReady, false);
+  // document.addEventListener("amazonPlatformReady", onAmazonPlatformReady, false);
 
 
   function App(settingsParams) {
@@ -53,7 +53,7 @@
     };
 
 
-    this.dataLoaded = function() {
+    this.dataLoaded = function() {bb
 
       var logo;
       this.$appContainer.empty();
@@ -62,17 +62,17 @@
 
       this.$appContainer.append(html);
 
-      this.browse();
+    //  this.browse();
 
-      this.gaUrl += "v=1"; // Version.
-      this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
-      this.gaUrl += "&cid=555"; // Anonymous Client ID.
-      this.gaUrl += "&t=event"; // Event hit type
-      this.gaUrl += "&ec=Channel%20Launch"; // Event Category. Required.
-      this.gaUrl += "&ea=App%20Launched"; // Event Action. Required.
-      this.gaUrl += "&el=Beyond%20Today%20FireTV"; // Event label.
-      this.gaUrl += "&z=" + Date.now();
-      app.data.postData(this.gaUrl);
+      // this.gaUrl += "v=1"; // Version.
+      // this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.
+      // this.gaUrl += "&cid=555"; // Anonymous Client ID.
+      // this.gaUrl += "&t=event"; // Event hit type
+      // this.gaUrl += "&ec=Channel%20Launch"; // Event Category. Required.
+      // this.gaUrl += "&ea=App%20Launched"; // Event Action. Required.
+      // this.gaUrl += "&el=Beyond%20Today%20FireTV"; // Event label.
+      // this.gaUrl += "&z=" + Date.now();
+      // app.data.postData(this.gaUrl);
 
 
     }.bind(this);
