@@ -1,8 +1,8 @@
 
 {
-  "name": "fli",
+  "name": "pdr",
   "version": "0.1.0",
-  "description": "Beyond Today",
+  "description": "Porn Done Right",
   "repository": "hidden",
   "scripts": {
     "prestart": "npm install",
