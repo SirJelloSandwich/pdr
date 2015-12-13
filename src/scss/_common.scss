@@ -16,6 +16,7 @@ body {
   font-family : 'Roboto', serif;
   background: $color-app-base-bg $img-app-background no-repeat left top;
   background-size : 100% 100%;
+
 }
 
 .modal-dialog {
@@ -152,6 +153,7 @@ body {
   overflow : hidden;
   z-index: 600;
   font-family: Optima, sans-serif;
+  overflow-y: scroll;
 }
 
 
