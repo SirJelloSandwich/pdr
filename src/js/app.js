@@ -48,21 +48,24 @@
 
     this.makeInitialDataCall = function() {
 
-      this.data.loadInitialData(this.dataLoaded);
-
+      //this.data.loadInitialData(this.dataLoaded);
+      this.dataLoaded();
     };
 
 
     this.dataLoaded = function() {
 
       var logo;
-      this.$appContainer.empty();
+      //this.$appContainer.empty();
 
       var html = fireUtils.buildTemplate($("#app-header-template"), {});
 
       this.$appContainer.append(html);
 
-      this.browse();
+      html = fireUtils.buildTemplate($("#video-container-template"), {});
+
+      this.$appContainer.append(html);
+      //this.browse();
       //
       // this.gaUrl += "v=1"; // Version.
       // this.gaUrl += "&tid=UA-69425418-1"; // Tracking ID / Property ID.

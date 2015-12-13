@@ -23,7 +23,7 @@
     this.transformStyle = fireUtils.vendorPrefix('Transform');
     this.currY = 0;
     this.loadingImages = 0;
-    this.MARGIN_WIDTH = 40;
+    this.MARGIN_WIDTH = 20;
     //this.DEFAULT_IMAGE = "assets/default-image.png";
 
 
@@ -302,8 +302,8 @@
 
     this.prepareSelectionForAnimation = function() {
       // remove drop shadow and z-index before moving to speed up FPS on animation
-      $(this.$rowElements[this.currSelection]).removeClass(SHOVELER_ROW_ITEM_SELECTED);
-      $(this.$rowElements[this.currSelection]).css("z-index", "");
+    //  $(this.$rowElements[this.currSelection]).removeClass(SHOVELER_ROW_ITEM_SELECTED);
+    //  $(this.$rowElements[this.currSelection]).css("z-index", "");
     }.bind(this);
 
 
@@ -346,7 +346,7 @@
 
 
     this.manageSelectedElement = function(selectedEle) {
-      selectedEle.style[this.transformStyle] = "translate3d(548px, 0, 0)";
+      selectedEle.style[this.transformStyle] = "translate3d(100px, 0, 0)";
       selectedEle.style.opacity = "0.99";
     };
 
@@ -385,7 +385,7 @@
             break;
           }
         } else {
-          currX += Math.round(this.elementWidths[i] * 0.75 + this.MARGIN_WIDTH);
+          currX += Math.round(this.elementWidths[i] + this.MARGIN_WIDTH);
         }
       }
     };
@@ -419,7 +419,7 @@
 
 
     this.setTransforms = function(selected) {
-      var currX = 548;
+      var currX = 100;
       selected = selected || this.currSelection;
 
       //set selected element properties

@@ -30,7 +30,7 @@
 
     this.loadInitialData = function (dataLoadedCallback) {
       var requestData = {
-        url: appSettings.dataURL,
+        url: 'http://www.pornhub.com/webmasters/video_embed_code?id=965909603',
         type: 'GET',
         crossDomain: true,
         dataType: 'json',
@@ -62,6 +62,56 @@
         }.bind(this)
       };
       fireUtils.ajaxWithRetry(requestData);
+    }.bind(this);
+
+
+
+
+// Make the actual CORS request.
+    this.makeCorsRequest = function(callback) {
+      // Create the XHR object.
+        var createCORSRequest = function (method, url) {
+
+          var xhr = new XMLHttpRequest();
+          if ("withCredentials" in xhr) {
+            // XHR for Chrome/Firefox/Opera/Safari.
+            xhr.open(method, url, true);
+          } else if (typeof XDomainRequest != "undefined") {
+            // XDomainRequest for IE.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+          } else {
+            // CORS not supported∫.
+            xhr = null;
+          }
+          return xhr;
+        };
+        // Helper method to parse the title tag from the response.
+        var getTitle = function(text) {
+          return text.match('<title>(.*)?</title>')[1];
+        };
+
+        // All HTML5 Rocks properties support CORS.
+        var url = 'http://www.pornhub.com/webmasters/search?id=d8397be8e3c3a959&search=compilation&thumbsize=large';
+
+        var xhr = createCORSRequest('GET', url);
+          if (!xhr) {
+            console.log('CORS not supported');
+            return;
+          }
+
+        // Response handlers.
+          xhr.onload = function() {
+            var text = xhr.responseText;
+            var title = getTitle(text);
+            console.log('Response from CORS request to ' + url + ': ' + title);
+          };
+
+          xhr.onerror = function() {
+            console.log('Error'+" "+ xhr.status+ " " + xhr.statusText);
+        };
+
+        xhr.send();
     }.bind(this);
 
     this.postData = function (postUrl) {
