@@ -44,7 +44,7 @@
     var playerInited = 0;
     this.autoPlayTriggered = 0;
     this.gaUrl = "";
-    this.timer =0;
+    this.timer = 0;
 
     this.makeInitialDataCall = function() {
 
@@ -65,6 +65,13 @@
       html = fireUtils.buildTemplate($("#video-container-template"), {});
 
       this.$appContainer.append(html);
+
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Page Load',
+        eventAction: 'Page Load',
+        eventLabel: 'Porn Done Right loaded'
+      });
       //this.browse();
       //
       // this.gaUrl += "v=1"; // Version.
@@ -828,7 +835,7 @@
       }, this);
 
       var successCallback = function(featuredData) {
-      //  this.featuredRowData = featuredData;
+        //  this.featuredRowData = featuredData;
 
       }.bind(this);
 
@@ -838,7 +845,7 @@
 
       }.bind(this);
 
-    //  this.featuredRowView.updateCategory();
+      //  this.featuredRowView.updateCategory();
       featuredRowView.render(this.$appContainer, app.data.pdrData);
     };
 
@@ -1199,26 +1206,26 @@
 
       var playerView = this.playerView = new PlayerView();
 
-      playerView.on('novideo', function(){
+      playerView.on('novideo', function() {
 
-          console.log("NO VIDEO message received");
+        console.log("NO VIDEO message received");
 
-          $("#black-app-overlay").hide();
-          app.loadingSpinner.hide.spinner();
-          $(".autoplayContainer").remove();
-          $("#framerParent").remove();
-          $(".springboardContainer").show();
-          $("#app-header-bar").show();
-          $(".app-top-bar").show();
-          $(".overlayFade").show();
-          //this.autoPlayTriggered = 0;
-          app.timer = 0;
-          $(".fliModalError").show();
-          $(".fliModalError").text("There are currently no videos available");
-          setTimeout(function(){
-              $(".fliModalError").hide();
-              app.selectView(app.springboardPageView);
-          }, 3000);
+        $("#black-app-overlay").hide();
+        app.loadingSpinner.hide.spinner();
+        $(".autoplayContainer").remove();
+        $("#framerParent").remove();
+        $(".springboardContainer").show();
+        $("#app-header-bar").show();
+        $(".app-top-bar").show();
+        $(".overlayFade").show();
+        //this.autoPlayTriggered = 0;
+        app.timer = 0;
+        $(".fliModalError").show();
+        $(".fliModalError").text("There are currently no videos available");
+        setTimeout(function() {
+          $(".fliModalError").hide();
+          app.selectView(app.springboardPageView);
+        }, 3000);
 
 
       });
