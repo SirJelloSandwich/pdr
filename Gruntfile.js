@@ -157,7 +157,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['./Gruntfile.js', './src/js/**/*.js', './src/scss/**/*.scss', './src/html/index.html'],
-      tasks: ['jshint', 'concat:dev', 'sass:dev', 'processhtml:dev']
+      tasks: ['jshint', 'concat:dev','concat:mobile', 'sass:mobile', 'sass:dev', 'processhtml:dev']
     },
     shell: {
       copylibs: {

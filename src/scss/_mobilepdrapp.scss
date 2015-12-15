@@ -20,6 +20,7 @@ body {
   overflow : hidden;
   z-index: 600;
   font-family: 'Roboto', serif;
+  overflow-y: scroll;
 }
 
 .app-top-bar {
@@ -48,4 +49,9 @@ body {
   position: relative;
   padding-left: 3vw;
   top: 11%;
+}
+.videoContainer {
+  position: relative;
+  top: 10vw;
+  left: 20vw;
 }
