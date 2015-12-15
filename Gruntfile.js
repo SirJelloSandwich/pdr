@@ -56,7 +56,8 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          './dev/js/<%= pkg.name %>.js': iifeFiles
+          './dev/js/<%= pkg.name %>.js': iifeFiles,
+          './dev/js/mobilepdr.js': mobileFiles
         }
       },
       mobile: {
@@ -66,7 +67,9 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          './build/js/<%= pkg.name %>.js': iifeFiles
+          './build/js/<%= pkg.name %>.js': iifeFiles,
+          './build/js/mobilepdr.js': mobileFiles
+
         }
       }
     },
@@ -115,7 +118,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          './build/css/<%= pkg.name %>.min.css': './src/scss/<%= pkg.name %>.scss'
+          './build/css/<%= pkg.name %>.min.css': './src/scss/<%= pkg.name %>.scss',
+          './build/css/mobilepdr.min.css': './src/scss/mobilepdr.scss',
         }
       }
     },
@@ -142,7 +146,9 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          './build/index.html': ['./src/html/index.html']
+          './build/index.html': ['./src/html/index.html'],
+          './build/mobileIndex.html': ['./src/html/mobileIndex.html'],
+          './build/desktop.html': ['./src/html/desktop.html']
         }
       }
     },
@@ -228,7 +234,9 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['shell:cleanBuild',
     'jshint',
     'concat:build',
+    'concat:mobile',
     'sass:dist',
+    //'sass:mobile',
     'uglify',
     'processhtml:dist',
     'shell:copylibs:build',
