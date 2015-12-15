@@ -6,96 +6,23 @@
 <html lang='en'>
 
 <head>
-  <title>Porn Done Right</title>
-  <meta charset="utf-8" name="hubtraffic-domain-validation" content="d8397be8e3c3a959" />
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    /**
-     * This script will set the 'initial-scale' value on the viewport metatag
-     * The scale is used to fit the template on Kindle Fire mobile devices
-     * This must be handled in the head of the document because the scale
-     * is not affected once the page finishes loading
-     */
-    var vp = document.getElementById('viewport');
-    var initialScale = Math.max(screen.width, screen.height) / 1920;
-    vp.setAttribute('content', 'width=device-width, initial-scale=' + initialScale + ', maximum-scale=' + initialScale, +'minimum-scale=' + initialScale);
-  </script>
-  <!-- <script type="text/javascript" src="http://www.pornhub.com/webmasters/search?id=d8397be8e3c3a959&search=compilation&thumbsize=large"></script> -->
 
-  <!-- Google Analytics -->
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-71364800-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <!-- End Google Analytics -->
-
-  <link rel="stylesheet" href="css/pdr.css">
-  <!-- build:css:dist css/pdr.min.css -->
-  <!-- /build -->
 
 </head>
 
 <body>
-  <div id="app-container" class="app-main-container">
 
-  </div>
-
-  <!-- Video Container Template -->
-  <script id="video-container-template" type="text/x-handlebars-template">
-    <div class="videoContainer">
-      <iframe src="http://www.pornhub.com/embed/ph56675723bc4b3" frameborder="0" width="708" height="468" scrolling="no"></iframe>
-      <iframe src="http://www.pornhub.com/embed/1483350053" frameborder="0" width="708" height="468" scrolling="no"></iframe>
-      <iframe src="http://www.pornhub.com/embed/1005779365" frameborder="0" width="708" height="468" scrolling="no"></iframe>
-      <iframe src="http://www.pornhub.com/embed/ph565e9ea662c0c" frameborder="0" width="708" height="468" scrolling="no"></iframe>
-      <iframe src="http://www.pornhub.com/embed/31445579" frameborder="0" width="708" height="468" scrolling="no"></iframe>
-    </div>
+  <script type="text/javascript">
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      var destination = './mobileIndex.html';
+      location.href = (destination + (location.href.indexOf("?") > -1 ? "?" + location.href.split("?")[1] : ""));
+      // some code..
+    } else {
+      destination = './desktop.html';
+      location.href = (destination + (location.href.indexOf("?") > -1 ? "?" + location.href.split("?")[1] : ""));
+    }
   </script>
 
-  <!-- App Header Template -->
-  <script id="app-header-template" type="text/x-handlebars-template">
-    <div class="app-top-bar">
-      <div class="mainTitle">Porn Done Right</div>
-      <div class="mainDescription"> We bring you the BEST from the top sites</div>
-      <img class="menuPic" src="http://cdn1b.static.pornhub.phncdn.com/www-static/images/pornhub_christmas.png?cache=2015120901"/>
-    </div>
-  </script>
-
-  <!-- Featured View Template  -->
-  <script id="featured-template" type="text/x-handlebars-template">
-    <div class="largeBrowseContainer">
-      <div class="innerLargeBrowseContainer">
-        <div id="featured-container">
-          {{#each items}}
-          <div id="{{@index}}" class="featured-static ">
-            <div class="featuredRowInfoOverlay"></div>
-          </div>
-          {{/each}}
-
-        </div>
-      </div>
-    </div>
-
-  </script>
-
-
-
-  <script src="libs/handlebars-v2.0.0.js"></script>
-  <script src="libs/jquery.js"></script>
-  <script src="js/pdr.js"></script>
-  <!-- build:js:dist js/pdr.min.js -->
-  <!-- /build -->
 </body>
 
 </html>

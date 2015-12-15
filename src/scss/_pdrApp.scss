@@ -1,0 +1,51 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow : hidden;
+}
+
+body {
+  position : absolute;
+  padding: 0;
+  margin: 0;
+  font-family : 'Roboto', serif;
+  background:  #5a656f url('../assets/pdrBackground.jpg')  no-repeat left top;
+  background-size : 100% 100%;
+
+}
+.app-main-container {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+  z-index: 600;
+  font-family: 'Roboto', serif;
+}
+
+.app-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vw;
+  z-index: 8;
+  background: linear-gradient(to bottom,#000000,rgba(255,255,255,0.0));
+}
+.mainTitle {
+  color: white;
+  font-size: 3vw;
+  padding-top: 2vw;
+  padding-left: 7vw;
+  display: inline-block;
+}
+.mainDescription {
+  color: white;
+  font-size: 2vw;
+  display: inline-block;
+  padding-left: 6vw;
+}
+.menuPic {
+  position: relative;
+  padding-left: 3vw;
+  top: 11%;
+}
